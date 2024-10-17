@@ -1,8 +1,8 @@
-﻿using Grpc.Core;
-using MediatR;
+﻿using MediatR;
 using Student.Command.Grpc.Commands;
 using Student.Command.Grpc.Data.Repositories.Abstract;
 using Student.Command.Grpc.Data.Services.Abstract;
+using Student.Command.Grpc.Exceptions;
 
 namespace Student.Command.Grpc.Handlers
 {
@@ -16,7 +16,7 @@ namespace Student.Command.Grpc.Handlers
             var events = await _unitOfWork.Events.GetAllByAggregateIdAsync(command.Id, cancellationToken);
 
             if (!events.Any())
-                throw new RpcException(new Status(StatusCode.NotFound, "Student not found"));
+                throw new StudentNotFoundException();
 
             var student = Models.Student.LoadFromHistory(events);
 

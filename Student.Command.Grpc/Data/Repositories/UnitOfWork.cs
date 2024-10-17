@@ -17,6 +17,18 @@ namespace Student.Command.Grpc.Data.Repositories
                 return _events = new EventRepository(_appDbContext);
             }
         }
+        private IOutboxMessageRepository? _outboxMessages;
+
+        public IOutboxMessageRepository OutboxMessages
+        {
+            get
+            {
+                if (_outboxMessages != null)
+                    return _outboxMessages;
+
+                return _outboxMessages = new OutboxMessageRepository(_appDbContext);
+            }
+        }
 
         public async Task SaveChangesAsync() => await _appDbContext.SaveChangesAsync();
         public void Dispose()

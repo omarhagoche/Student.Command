@@ -8,6 +8,7 @@ namespace Student.Command.Grpc.Data
 {
     public class AppDbCon(DbContextOptions options) : DbContext(options)
     {
+        public DbSet<OutboxMessage> OutboxMessages { get; set; }
         public DbSet<Event> Events { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

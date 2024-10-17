@@ -1,5 +1,6 @@
 ﻿using FluentValidation;
 using Student.Command.Grpc.Protos;
+using Student.Command.Grpc.Resourses;
 
 namespace Student.Command.Grpc.Validators
 {
@@ -8,7 +9,8 @@ namespace Student.Command.Grpc.Validators
         public CreateStudentRequestValidator()
         {
             RuleFor(r => r.Name)
-                .Length(2, 20);
+                .Length(2, 20)
+                .WithName(Phrases.StudentName);
 
             RuleFor(r => r.Phone)
                 .Length(9, 13);
