@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
+using Student.Command.Domain.Resourses;
 using Student.Command.Grpc.Protos;
-using Student.Command.Grpc.Resourses;
 
 namespace Student.Command.Grpc.Validators
 {

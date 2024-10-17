@@ -1,5 +1,6 @@
 ﻿using Grpc.Core;
 using MediatR;
+using Student.Command.Domain.Resourses;
 using Student.Command.Grpc.Extensions;
 using Student.Command.Grpc.Protos;
 
@@ -17,7 +18,7 @@ namespace Student.Command.Grpc.Services
 
             return new Response
             {
-                Message = ""
+                Message = Phrases.StudentCreated
             };
         }
 
@@ -29,7 +30,7 @@ namespace Student.Command.Grpc.Services
 
             return new Response
             {
-                Message = ""
+                Message = Phrases.StudentUpdated
             };
         }
     }

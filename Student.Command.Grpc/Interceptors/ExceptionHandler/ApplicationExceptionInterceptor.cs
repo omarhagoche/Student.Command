@@ -1,7 +1,7 @@
 ﻿using Grpc.Core;
 using Grpc.Core.Interceptors;
-using Student.Command.Grpc.Exceptions.Abstraction;
-using Student.Command.Grpc.Exceptions.Abstraction.Exceptions;
+using Student.Command.Domain.Exceptions.Abstraction;
+using Student.Command.Domain.Exceptions.Abstraction.Exceptions;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;

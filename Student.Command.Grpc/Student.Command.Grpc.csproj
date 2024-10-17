@@ -12,36 +12,20 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Azure.Messaging.ServiceBus" Version="7.18.2" />
     <PackageReference Include="Calzolari.Grpc.AspNetCore.Validation" Version="8.1.0" />
     <PackageReference Include="Grpc.AspNetCore" Version="2.66.0" />
-    <PackageReference Include="MediatR" Version="12.4.1" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.10">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="System.Text.Json" Version="8.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Student.Command.Infra\Student.Command.Infra.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Protobuf Include="Protos\student_command.proto" GrpcServices="Server" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Update="Resourses\Phrases.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Phrases.resx</DependentUpon>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Update="Resourses\Phrases.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Phrases.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

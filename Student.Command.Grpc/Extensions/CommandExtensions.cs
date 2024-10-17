@@ -1,4 +1,5 @@
-﻿using Student.Command.Grpc.Commands;
+﻿using Student.Command.Application.Features.Students.CreateStudent;
+using Student.Command.Application.Features.Students.UpdateStudent;
 using Student.Command.Grpc.Protos;
 
 namespace Student.Command.Grpc.Extensions

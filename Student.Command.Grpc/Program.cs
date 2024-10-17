@@ -1,10 +1,12 @@
 using Calzolari.Grpc.AspNetCore.Validation;
 using Microsoft.EntityFrameworkCore;
-using Student.Command.Grpc.Data;
+using Student.Command.Application;
 using Student.Command.Grpc.Interceptors;
 using Student.Command.Grpc.Interceptors.ExceptionHandler;
 using Student.Command.Grpc.Services;
 using Student.Command.Grpc.Validators.Main;
+using Student.Command.Infra;
+using Student.Command.Infra.Persistence;
 using System.Reflection;
 
 namespace Student.Command.Grpc
@@ -26,6 +28,8 @@ namespace Student.Command.Grpc
             });
 
             builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
+
+            builder.Services.AddAppServices();
 
             builder.Services.AddInfraServices(builder.Configuration);
 
