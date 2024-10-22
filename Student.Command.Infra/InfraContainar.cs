@@ -15,10 +15,7 @@ namespace Student.Command.Infra
     {
         public static IServiceCollection AddInfraServices(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<AppDbCon>(opt =>
-            {
-                opt.UseSqlServer(configuration.GetConnectionString("Database"));
-            });
+            services.AddSqlDb(configuration);
 
             services.AddSingleton(s =>
             {
