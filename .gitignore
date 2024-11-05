@@ -363,5 +363,3 @@ MigrationBackup/
 FodyWeavers.xsd
 /Student.Command.Grpc/appsettings.json
 /Student.Command.Grpc/appsettings.Development.json
-/Student.Command.Grpc/appsettings.json
-/Student.Command.Grpc/appsettings.Development.json
